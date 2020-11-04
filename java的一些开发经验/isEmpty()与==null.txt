@@ -1,0 +1,27 @@
+一：
+Map的isEmpty()与==null的区别
+
+ isEmpty()方法判断Map是否有内容（即new分配空间后是否put键值对），若没有内容则true，否则false
+ == null是判断map是否为null（即是否new分配空间，和其中的键值对没关系），若没有内容则true，否则false
+
+例1：
+Map map = new HashMap<String ,String>();
+System.out.println("判断map是否有内容:"+map.isEmpty());//返回true
+System.out.println("判断map是否为null:"+map==null);//返回false
+ 
+例2：
+ Map map = new HashMap<String ,String>();
+ map=null;
+ System.out.println("判断map是否为null:"+(map==null));//结果为true
+ System.out.println("判断map是否有内容:"+map.isEmpty());//NullPointerException
+
+例3：
+ Map map = new HashMap<String ,String>();
+ map.put(null,null);
+ System.out.println("判断map是否为null:"+(map==null));//false
+ System.out.println("判断map是否有内容:"+map.isEmpty());//false
+
+二：
+集中中区别
+isEmpty() 用于判断List内容是否为空，即表里一个元素也没有，
+应该先判断null再判断isEmpty
