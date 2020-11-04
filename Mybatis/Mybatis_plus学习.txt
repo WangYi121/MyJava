@@ -1,0 +1,5 @@
+如果主键id自增，调用insert API出错时，id上加注解
+ @TableId(value = "id", type = IdType.INPUT)
+这样id不用赋值，会自动赋值  
+
+如果id为varchar 则自己getUUID
